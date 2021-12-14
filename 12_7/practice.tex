@@ -1,0 +1,75 @@
+%\documentstyle[epsf,twocolumn]{jarticle}       %LaTeX2.09仕様
+\documentclass[twocolumn]{jsarticle}     %pLaTeX2e仕様
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  基本 バージョン
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{-45pt}
+%\setlength{\oddsidemargin}{0cm} 
+\setlength{\oddsidemargin}{-7.5mm}
+%\setlength{\evensidemargin}{0cm} 
+\setlength{\textheight}{24.1cm}
+%setlength{\textheight}{25cm} 
+\setlength{\textwidth}{17.4cm}
+%\setlength{\textwidth}{172mm} 
+\setlength{\columnsep}{11mm}
+
+\kanjiskip=.07zw plus.5pt minus.5pt
+
+
+%【節がかわるごとに(1.1)(1.2) …(2.1)(2.2)と数式番号をつけるとき】
+%\makeatletter
+%\renewcommand{\theequation}{%
+%\thesection.\arabic{equation}} %\@addtoreset{equation}{section}
+%\makeatother
+
+%\renewcommand{\arraystretch}{0.95} 行間の設定
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipdfm]{graphicx}   %pLaTeX2e仕様(要\documentstyle ->\documentclass)
+\usepackage{cite}
+\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\twocolumn[
+\noindent
+\hspace{1em}
+
+\today
+\hfill
+\ \ 1191201005 池田祐介
+
+\vspace{2mm}
+\hrule
+\begin{center}
+{\Large \bf 12/7〜12/13 報告書}
+\end{center}
+\hrule
+\vspace{3mm}
+]
+
+
+\section{進捗}
+\begin{itemize}
+\item 夏目漱石の小説『吾輩は猫である』の文章(neko.txt)をデータとして例として使用した
+\item データに対して形態素解析することで形容詞を含む文を検出し、その形容詞部分を[MASK]トークンに変換して、文頭に[CLE]トークン、文末に[SEP]トークンを付加した文をデータセットとして用いた
+\item 東北大学の研究室が公開している事前学習済みBERTモデルを用いて[MASK]部分の推定を行い、上位100件の候補の中から形容詞のみを最大5個抽出して表示した
+\item 抽出した候補の中に[MASK]に変換される前の形容詞と一致するものがあれば1、なければ0として、1を出力する割合を出すと0.366であった 
+\end{itemize}
+
+\section{次に取り組むこと}
+\begin{itemize}
+\item 元となる文に対して係り受け解析をする
+\item 形容詞以外の形容語(形容動詞、副詞など)についても同様の処理を行ってみる
+\item 直喩法(〜のような)についても同様の処理を行ってみる
+\item もう少し大きなデータセットを用いる
+\end{itemize}
+
+\nocite{*}
+\bibliography{index}
+\bibliographystyle{junsrt} %参考文献出力スタイル
+
+\end{document}

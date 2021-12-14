@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{FFNN}
+鈴木勘太, 杉本徹.
+\newblock Encoder-decoder モデルを用いた文章表現を豊かにする執筆支援システム.
+\newblock 言語処理学会 第27回年次大会 発表論文集, pp. 1862--1866, 2021.
+
+\bibitem{aaaa}
+ゆるいDeepLearning.
+\newblock
+  Pytorchで自然言語処理でよく使用されるtransformerを少ないコードで使用してみる.
+\newblock
+  \url{https://www.yurui-deep-learning.com/2021/01/07/pytorch-transformer/}.
+
+\end{thebibliography}

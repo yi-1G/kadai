@@ -1,0 +1,61 @@
+%\documentstyle[epsf,twocolumn]{jarticle}       %LaTeX2.09仕様
+\documentclass[twocolumn]{jsarticle}     %pLaTeX2e仕様
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  基本 バージョン
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\topmargin}{-45pt}
+%\setlength{\oddsidemargin}{0cm} 
+\setlength{\oddsidemargin}{-7.5mm}
+%\setlength{\evensidemargin}{0cm} 
+\setlength{\textheight}{24.1cm}
+%setlength{\textheight}{25cm} 
+\setlength{\textwidth}{17.4cm}
+%\setlength{\textwidth}{172mm} 
+\setlength{\columnsep}{11mm}
+
+\kanjiskip=.07zw plus.5pt minus.5pt
+
+
+%【節がかわるごとに(1.1)(1.2) …(2.1)(2.2)と数式番号をつけるとき】
+%\makeatletter
+%\renewcommand{\theequation}{%
+%\thesection.\arabic{equation}} %\@addtoreset{equation}{section}
+%\makeatother
+
+%\renewcommand{\arraystretch}{0.95} 行間の設定
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[dvipdfm]{graphicx}   %pLaTeX2e仕様(要\documentstyle ->\documentclass)
+\usepackage{cite}
+\usepackage{url}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\twocolumn[
+\noindent
+\hspace{1em}
+
+\today
+\hfill
+\ \ 1191201005 池田祐介
+
+\vspace{2mm}
+\hrule
+\begin{center}
+{\Large \bf 11/30 報告書}
+\end{center}
+\hrule
+\vspace{3mm}
+]
+前回調べた論文[1]のモデルを再現するに当たり、まず論文内で使用されているモデルであるTransformerや、それ以前のモデルおよびBERTについて調べた。Transformerについて書かれた論文やサイトをいくつか見てみたが、いまいちよくわからなかったためTransformerを実際に使用したコードが掲載されているサイト[2]のものをGoogleColab上で動かし、動作について確認した。しかし、まだこれを動かしてみただけであり、パラメータについてもどこをどういじるとどう変わるのか理解できていないため、うこれを理解し、umaruのデータセットフォルダにある青空文庫のデータに対して論文のものと同様の処理を施したデータセットを作ることを次回までの目標としたい。
+
+
+
+\nocite{*}
+\bibliography{index}
+\bibliographystyle{junsrt} %参考文献出力スタイル
+
+\end{document}
